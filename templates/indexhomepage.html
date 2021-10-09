@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block body %}
+  
+
+    <style>
+        body{
+          background-color :black;
+        }
+        span{
+          font-size:40px;
+          color : white;
+        }
+
+        .fcont{
+          display : flex;
+          height : 100vh;
+          justify-content:center;
+          align-items : center;
+
+        }
+        .pos{
+      position: sticky;
+      top: 0;
+      z-index: 100;
+        }
+    </style>
+
+
+<div class="fcont">
+  <div class="fitem">
+    <b><span class="typed"></span></b>
+  </div>
+</div>
+  
+    <script src="{{ url_for('static',filename = 'typed.min.js')}}"></script>
+
+    <script>
+      var typed = new Typed('.typed',{
+        strings : ["Hello , My Name is Aman Pathak"," Good to See you :)","I am doing Btech From IIT BHU",
+        "Interest in Information Technology","Digital Arts As Well :)" , "Know About Me From Diffrent tabs Above"],
+        loop : true,
+        typeSpeed : 30,
+        backSpeed : 30
+      });
+    </script>
+{% endblock body %}
+
+
+

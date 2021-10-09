@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+<link rel="stylesheet" href="{{ url_for('static',filename = 'stylesheets/index-style.css')}}">
+{% block body %}
+<hr>
+<form class = "container my-3" action="/update/{{todo.srno}}" method="POST">
+    <div class="mb-3 ">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name ="title" value="{{todo.title}}">
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" class="form-control" id="desc" name="desc"  value="{{todo.desc}}"> 
+    </div>
+    <button type="submit" class="btn btn-info">Update Todo</button>
+  </form>
+  <hr>
+    
+{% endblock body %}

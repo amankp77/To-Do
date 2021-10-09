@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  
+    <style>
+      *{
+        color : white;
+      }
+      body{
+        background-image:url(https://www.wallpapertip.com/wmimgs/8-89401_social-media-high-resolution-logo-wallpapers-hd-social.jpg);
+        background-size:cover;
+        background-attachment:fixed;
+
+      }
+      #center{
+        display : flex;
+        justify-content : center;
+        align-items : center;
+        height : 100vh;
+      }
+      .table{
+        border : 2px solid white;
+        background-color:rgba(0,0,0,0.5);
+        text-decoration: solid;
+        /*border-radius : 30px;*/
+      }
+      a{
+        color:white;
+      }
+      a:hover{
+        color:red;
+      }
+      .pos{
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+
+
+<div id="center">
+  <div>
+    <table class="table" >
+  <thead>
+    <tr>
+
+      <th scope="col">Platform</th>
+      <th scope="col">Contact</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+      <td>Phone no.</td>
+      <td>8866614144</td>
+
+    </tr>
+    <tr>
+
+      <td>Instagram</td>
+      <td>@amanpathak</td>
+
+    </tr>
+    <tr>
+
+     <td>Email</td>
+      <td>amanpathak420@gmail.com</td>
+
+    </tr>
+    <tr>
+
+     <td>Youtube</td>
+   <td>   <a href="https://www.youtube.com/channel/UC7dUzygDrsetxuukcaYGllQ/about">YouTube</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+  
+
+{% endblock body %}

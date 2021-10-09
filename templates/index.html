@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+
+
+
+{% block button %}
+  <a href="/deleteall"><button class="btn btn-info Delete" >Delete All TODOs</button></a>
+{% endblock button %}
+
+
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static',filename = 'stylesheets/index-style.css')}}">
+
+<div class="left">
+  <main>
+    <form class="container my-3" action="/" method="POST">
+      <div class="mb-3 ">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title">
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input type="text" class="form-control" id="desc" name="desc">
+        </div>
+        <button type="submit" class="btn btn-info">Add Todo</button>
+    </form>
+    <hr>
+
+    <div class="size">
+      {% if todos|length == 0 %}
+      <div class="alert alert-info size" role="alert">
+        You have zero Todo ! It means You are active enough to complete all of you task or too lazy to add something :)
+        {% else %}
+
+        <table class="table table-info my-3">
+          <thead>
+            <tr>
+              <th scope="col">SRno</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Date Created</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for todo in todos %}
+
+
+            <tr>
+              <th scope="row">{{loop.index}}</th>
+              <td>{{todo.title}}</td>
+              <td>{{todo.desc}}</td>
+              <td>{{todo.date_created}}</td>
+              <td>
+                <a href="/update/{{todo.srno}}"> <button type="button"
+                    class="btn btn-outline-info btn-sm"><b>Update</b></button>
+                  <a href="/delete/{{todo.srno}}"><button type="button"
+                      class="btn btn-outline-danger btn-sm"><b>Delete</b></button>
+                  </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+  </main>
+</div>
+{% endif %}
+
+
+{% endblock body %}

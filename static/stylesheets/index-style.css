@@ -1,0 +1,20 @@
+.bgi{
+ background-image: url("1.jpg");
+ background-attachment: fixed;
+ background-size: cover;  
+ 
+}
+
+label{
+    color: #fff;
+}
+
+.left{
+    width: 55vw;
+    margin: 3px 8px;
+}
+
+.size{
+    width: 54vw;
+   overflow: auto;
+}
