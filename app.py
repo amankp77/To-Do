@@ -63,5 +63,9 @@ def deleteall():
       db.session.commit()
     return redirect("/")
 
+@app.route("login")
+def login():
+    pass
+
 if __name__ == "__main__":
     app.run(debug=True)
